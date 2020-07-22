@@ -1,0 +1,119 @@
+.form-group label {
+  color: #fff;
+}
+
+.fa {
+  background: transparent;
+}
+h3,h4,h6{
+  color: whitesmoke;
+}
+.comment-logo {
+  width: 80%;
+  margin: 5px;
+  margin-top: 70px;
+}
+
+.form-group label {
+  color: #fff;
+}
+
+.form-control {
+  width: 500px;
+}
+
+.medium-editor-textarea {
+  height: 200px;
+  width: 700px;
+  overflow: auto;
+}
+
+.medium-editor-textinput {
+  height: 50px;
+  width: 700px;
+  overflow: auto;
+}
+
+.col-sm {
+  text-align: center;
+  padding: 3px;
+  border-left: 1px solid #1f253d;
+}
+
+.col-sm:hover {
+  background: #50597b;
+}
+
+.comment {
+  border-top: 4px solid #fcb150 !important;
+  border: none;
+}
+
+.fa {
+  background: transparent;
+}
+
+.comment a:hover {
+  color: #fcb150;
+}
+
+.per-comment {
+  padding: 5px;
+  margin: 10px;
+  background-color: #273566;
+  color:#fff ;
+}
+
+.smiley {
+  border-top: 4px solid #11a8ab;
+}
+
+.smiley a:hover {
+  color: #11a8ab;
+}
+
+.heart {
+  border-top: 4px solid #e64c65;
+}
+
+.heart a:hover {
+  color: #e64c65;
+}
+
+.mynav {
+  font-size: 32px;
+}
+
+.btn-delete {
+  background: transparent;
+  color: #fff;
+}
+
+h1, h6 {
+  color: #fff;
+}
+
+.media {
+  margin: 10px;
+  border-bottom: solid rgb(78, 76, 78);
+  padding: 13px;
+}
+
+.post-div {
+  top: 15px;
+  background-color: #394264;
+}
+.post-info{
+  top: 20px;
+}
+.comment-div {
+  width: 80%;
+  margin: 8px;
+  padding: 8px;
+  background-color: rgb(110, 95, 163, 0.5);
+}
+
+.user-post-title {
+  color: #fff;
+  text-align: center;
+}

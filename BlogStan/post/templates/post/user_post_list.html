@@ -1,0 +1,19 @@
+{% extends "post/post_base.html" %}
+
+{% block prepost %}
+<div class="col-md-4 username-des rounded">
+    <h1>@{{post_user.username}}</h1>
+    <h6>Email Id: {{post_user.email}}</h6>
+    <h6>Name: {{post_user.first_name}} {{post_user.last_name}}</h6>
+    
+</div>
+{% endblock %}
+
+{% block post_content %}
+<div class="col-md-8">
+    <h2 class="user-post-title">POSTS</h2>
+    {% for post in post_list %}
+        {% include "post/_post.html" %}
+    {% endfor %}
+</div>
+{% endblock %}

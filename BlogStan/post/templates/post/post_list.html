@@ -1,0 +1,9 @@
+{% extends "post/post_base.html" %}
+
+    {% block post_content %}
+        <div class="col-lg-8 rounded">
+        {% for post in post_list %}
+            {% include "post/_post.html" %}
+        {% endfor %}
+        </div>
+    {% endblock %}

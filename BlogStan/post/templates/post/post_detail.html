@@ -1,0 +1,59 @@
+{% extends "post/post_base.html" %}
+
+{% block post_content %}
+<div class="col-8 post-div rounded">
+    <div>
+        <h3 style="color: whitesmoke">{{ post.title|safe }}</h3>
+    </div>
+    <div>
+        <h6 style="color:whitesmoke">{{ post.message_html|safe }}</h6>
+        <div class="col-sm-6 post-info float-right">
+            <p style="color: rgb(190, 170, 170);"><a
+                    href="{% url 'posts:for_user' username=post.user.username %}">@{{post.user.username}}</a>
+                {{post.created_at}}</p>
+        </div>
+    </div>
+    <div class="row comment-logo">
+        {% if user.is_authenticated %}
+
+        <div class="col-sm comment rounded"><a href="{% url 'posts:add_comment'  post.id  %}"><i
+                    class="fa fa-comment fa-2x" aria-hidden="true"></i></a> <sup><span
+                    class="badge badge-pill badge-warning"
+                    style="font-size: 12px;">{{ post.comments.all.count }}</span></sup></div>
+        <div class="col-sm smiley rounded"><a href="#"><i class="fa fa-star fa-2x" aria-hidden="true"></i></a></div>
+        <div class="col-sm heart rounded"><a href="#"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></a>
+            <sup><span class="badge badge-pill badge badge-danger" style="font-size: 12px;">0</span></sup></div>
+
+        {%  endif %}
+    </div>
+
+    <div class='comment-div rounded'>
+        {% for comment in post.comments.all %}
+        {% if user.is_authenticated %}
+        <div class="per-comment rounded">
+            <div>
+                <p style="color: rgb(255, 255, 255);">{{comment.text|safe|linebreaksbr}}</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p style="color: rgb(190, 170, 170);"><a
+                            href="{% url 'posts:for_user' username=comment.user.username %}">@{{comment.user.username}}</a>
+                        {{comment.created_at}}</p>
+                </div>
+                <div class="col-sm-6">
+                    {% if user.is_authenticated and comment.user == user or post.user == user %}
+                    <a href="{% url 'posts:remove_comment' comment.pk %}">
+                        <i class="fa fa-trash" style="color: aliceblue;" aria-hidden="true"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+        {% endif %}
+        {% empty %}
+        <p style="color: aliceblue;">No Comment</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+<div class="col-12 post media rounded">
+    <div class="col-7">
+        <a class="post-title" style="text-decoration: none;" href="{% url 'posts:single' username=post.user.username pk=post.pk %}">
+            <h4 style="color: whitesmoke;">{{ post.title|safe }}</h4>
+        </a>
+    </div>
+    <div class="col-5">
+        <p class="media-heading ">
+            <span class="username-des ">
+                <a href="{% url 'posts:for_user' username=post.user.username %}"
+                    class="username-des">@{{post.user.username}}</a>
+            </span>
+
+            <time class="time">
+                <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}"
+                    class="username-des"> {{post.created_at}}</a>
+            </time>
+        </p>
+        
+    </div>
+    <div class="col-md-1">
+        {% if user.is_authenticated and post.user == user %}
+        <a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn-delete"><i class="fa fa-trash"
+                aria-hidden="true"></i></a>
+        {%  endif %}
+    </div>
+</div>

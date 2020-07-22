@@ -1,0 +1,24 @@
+body {
+  background: #1f253d;
+}
+
+.nav-style {
+  background-color: #02172c !important;
+  padding: 10px;
+}
+
+.nav-link {
+  color: #9099b7 !important;
+  font-size: 20px !important;
+  font-weight: 600;
+  opacity: 1 !important;
+}
+
+.form-group label {
+  color: #fff;
+}
+
+.fa {
+  background: transparent;
+}
+
